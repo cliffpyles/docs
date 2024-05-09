@@ -7,7 +7,7 @@ import DataSection from "./sections/Data";
 import * as themes from "./themes";
 const themeNames = Object.keys(themes).toSorted();
 
-const DEFAULT_DEMO_THEME = "condensed";
+const DEFAULT_DEMO_THEME = "standard";
 
 export const DemoContext = createContext({
   theme: themes[DEFAULT_DEMO_THEME],
