@@ -1,15 +1,11 @@
 import { useContext } from "react";
 import PropTypes from "prop-types";
-import { Box, Card, CardBody, CardHeader, Grid, Heading, Paragraph, ResponsiveContext, ThemeContext } from "grommet";
-import { DemoContext } from "../../App";
+import { Box, Card, CardBody, CardHeader, Grid, Heading, ResponsiveContext, ThemeContext } from "grommet";
+import { DemoContext } from "../Shell";
 
-export default function Section({ children, description, level = 1, title }) {
+export default function Section({ children }) {
   return (
     <Box pad="medium">
-      <Heading level={level} margin={{ vertical: "none" }}>
-        {title}
-      </Heading>
-      <Paragraph margin={{ top: "small" }}>{description}</Paragraph>
       <Box gap="medium">{children}</Box>
     </Box>
   );
@@ -17,9 +13,6 @@ export default function Section({ children, description, level = 1, title }) {
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  level: PropTypes.number,
 };
 
 export function SectionGrid({ children, columns = 3 }) {
