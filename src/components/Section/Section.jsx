@@ -4,18 +4,14 @@ import { Box, Card, CardBody, CardHeader, Grid, Heading, Paragraph, ResponsiveCo
 import { DemoContext } from "../../App";
 
 export default function Section({ children, description, level = 1, title }) {
-  const { theme } = useContext(DemoContext);
-
   return (
-    <ThemeContext.Extend value={theme}>
-      <Box pad="medium">
-        <Heading level={level} margin={{ vertical: "none" }}>
-          {title}
-        </Heading>
-        <Paragraph margin={{ top: "small" }}>{description}</Paragraph>
-        <Box gap="medium">{children}</Box>
-      </Box>
-    </ThemeContext.Extend>
+    <Box pad="medium">
+      <Heading level={level} margin={{ vertical: "none" }}>
+        {title}
+      </Heading>
+      <Paragraph margin={{ top: "small" }}>{description}</Paragraph>
+      <Box gap="medium">{children}</Box>
+    </Box>
   );
 }
 
@@ -49,6 +45,7 @@ SectionGrid.propTypes = {
 };
 
 export function SectionCard({ children, level = 3, title, bodyPad = "medium" }) {
+  const { theme } = useContext(DemoContext);
   return (
     <Card>
       {title && (
@@ -58,7 +55,9 @@ export function SectionCard({ children, level = 3, title, bodyPad = "medium" }) 
           </Heading>
         </CardHeader>
       )}
-      <CardBody pad={bodyPad}>{children}</CardBody>
+      <CardBody pad={bodyPad}>
+        <ThemeContext.Extend value={theme}>{children}</ThemeContext.Extend>
+      </CardBody>
     </Card>
   );
 }

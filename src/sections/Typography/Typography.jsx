@@ -5,7 +5,10 @@ import markdownText from "./markdownText.md?raw";
 export default function Typography() {
   return (
     <Section title="Typography" description="Components relatated to displaying text and copy">
-      <SectionGrid>
+      <SectionGrid columns={1}>
+        <SectionCard title="Markdown">
+          <Markdown>{markdownText}</Markdown>
+        </SectionCard>
         <SectionCard title="Semantic">
           <Heading level={1}>Heading Level 1</Heading>
           <Heading level={2}>Heading Level 2</Heading>
@@ -33,9 +36,6 @@ export default function Typography() {
           <Text size="medium">medium text</Text>
           <Text size="small">small text</Text>
           <Text size="xsmall">xsmall text</Text>
-        </SectionCard>
-        <SectionCard title="Markdown">
-          <Markdown>{markdownText}</Markdown>
         </SectionCard>
       </SectionGrid>
     </Section>
