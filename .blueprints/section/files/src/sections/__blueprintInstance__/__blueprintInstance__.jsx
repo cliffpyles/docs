@@ -1,9 +1,11 @@
-import Section from "../../components/Section";
+import Section, { SectionCard } from "../../components/Section";
 
 export default function {{blueprintInstance}}() {
     return (
         <Section title="{{title}}" description="{{description}}">
-            {/* components */ }
+            <SectionCard title="Subsection Title">
+                {/* components */}
+            </SectionCard>
         </Section>
     )
 }
