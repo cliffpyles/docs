@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Box, Grid, Heading, Paragraph } from "grommet";
+import { Box, Card, CardBody, CardHeader, Grid, Heading, Paragraph } from "grommet";
 
 export default function Section({ children, columns = 3, title, description }) {
   return (
@@ -25,4 +25,24 @@ Section.propTypes = {
   columns: PropTypes.number,
   title: PropTypes.string,
   description: PropTypes.string,
+};
+
+export function SectionCard({ children, title }) {
+  return (
+    <Card>
+      {title && (
+        <CardHeader pad="medium" background="light-1">
+          <Heading level={3} margin="none" size="small">
+            {title}
+          </Heading>
+        </CardHeader>
+      )}
+      <CardBody pad="medium">{children}</CardBody>
+    </Card>
+  );
+}
+
+SectionCard.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node.isRequired,
 };
