@@ -1,16 +1,21 @@
 import { useContext } from "react";
 import PropTypes from "prop-types";
-import { Box, Card, CardBody, CardHeader, Grid, Heading, Paragraph, ResponsiveContext } from "grommet";
+import { Box, Card, CardBody, CardHeader, Grid, Heading, Paragraph, ResponsiveContext, ThemeContext } from "grommet";
+import { DemoContext } from "../../App";
 
 export default function Section({ children, description, level = 1, title }) {
+  const { theme } = useContext(DemoContext);
+
   return (
-    <Box pad="medium">
-      <Heading level={level} margin={{ vertical: "none" }}>
-        {title}
-      </Heading>
-      <Paragraph margin={{ top: "small" }}>{description}</Paragraph>
-      <Box gap="medium">{children}</Box>
-    </Box>
+    <ThemeContext.Extend value={theme}>
+      <Box pad="medium">
+        <Heading level={level} margin={{ vertical: "none" }}>
+          {title}
+        </Heading>
+        <Paragraph margin={{ top: "small" }}>{description}</Paragraph>
+        <Box gap="medium">{children}</Box>
+      </Box>
+    </ThemeContext.Extend>
   );
 }
 
