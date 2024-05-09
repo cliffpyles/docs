@@ -23,12 +23,6 @@ const columns = [
   { property: "rating", header: "Rating" },
 ];
 
-{
-  /* <DataFilters drop>
-                  <DataFilter property="genre" />
-                </DataFilters> */
-}
-
 export default function DataSection() {
   return (
     <Section title="Data" description="Components related to data management">
