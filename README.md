@@ -1,3 +1,3 @@
-# Grommet Sink
+# Docs
 
-Kitchen Sink for developing Grommet themes.
+A resource documenting various software solutions
