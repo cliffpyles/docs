@@ -34,6 +34,11 @@ const router = createBrowserRouter([
             lazy: () => import("./pages/Apps/Chat/Documentation"),
           },
           {
+            id: "contacts",
+            path: "contacts",
+            lazy: () => import("./pages/Apps/Contacts/Documentation"),
+          },
+          {
             id: "dashboard",
             path: "dashboard",
             lazy: () => import("./pages/Apps/Dashboard/Documentation"),
