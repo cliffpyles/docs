@@ -1,5 +1,5 @@
 import { useLocation, useNavigate, useResolvedPath } from "react-router-dom";
-import { Anchor as GrommetAnchor, Box, Text } from "grommet";
+import { Anchor as GrommetAnchor, Text } from "grommet";
 
 export default function Anchor({ href, label, ...props }) {
   const navigate = useNavigate();

@@ -22,12 +22,6 @@
 [“Here’s Johnny!” - The Shining](https://www.imdb.com/title/tt0081505/)
 [“You're killin' me, Smalls!” - The Sandlot](https://www.imdb.com/title/tt0108037/)
 
-### Images
-
-!["I'm king of the world!" - Titanic](https://www.imdb.com/title/tt0120338/mediaviewer/rm1291722240/)
-
-!["I feel the need...the need for speed." - Top Gun](https://www.imdb.com/title/tt0092099/mediaviewer/rm1880315904/)
-
 ### Blockquotes
 
 > "You had me at hello." - Jerry Maguire

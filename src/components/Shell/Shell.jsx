@@ -16,8 +16,8 @@ function App() {
   const [activeTheme, setActiveTheme] = useState(DEFAULT_DEMO_THEME);
 
   return (
-    <DemoContext.Provider value={{ theme: themes[activeTheme] }}>
-      <Grommet theme={themes.branded} full>
+    <Grommet className="Shell" theme={themes.branded} full>
+      <DemoContext.Provider value={{ theme: themes[activeTheme] }}>
         <Grid
           rows={["xsmall", "auto"]}
           columns={["small", "auto"]}
@@ -29,7 +29,7 @@ function App() {
           ]}
         >
           <Header gridArea="header">
-            <Box></Box>
+            <Box />
             <Box direction="row" justify="end" align="baseline" fill="horizontal" pad="small" gap="small">
               <Select
                 options={themeNames}
@@ -62,8 +62,8 @@ function App() {
             <Outlet />
           </Main>
         </Grid>
-      </Grommet>
-    </DemoContext.Provider>
+      </DemoContext.Provider>
+    </Grommet>
   );
 }
 

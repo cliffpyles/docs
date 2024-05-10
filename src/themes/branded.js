@@ -13,11 +13,16 @@ const BRAND_COLOR = BLUE_CRAYOLA;
 const LINK_COLOR = CELESTIAL_BLUE;
 const LINK_HOVER_COLOR = CARROT_ORANGE;
 
+const TEXT_COLOR = GUNMETAL;
+
 export const branded = deepMerge(grommet, {
   global: {
     colors: {
       brand: BRAND_COLOR,
       active: ACTIVE_COLOR,
+      text: {
+        light: TEXT_COLOR,
+      },
     },
   },
   anchor: {

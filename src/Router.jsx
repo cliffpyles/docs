@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Shell from "./components/Shell";
@@ -15,23 +15,18 @@ const router = createBrowserRouter([
       {
         path: "components/:pageName?",
         async lazy() {
-          let { Components } = await import("./pages/Components/Components");
+          const { Components } = await import("./pages/Components/Components");
           return { Component: Components };
         },
       },
       {
-        path: "apps/:appName?",
-        async lazy() {
-          let { Apps } = await import("./pages/Apps/Apps");
-          return { Component: Apps };
-        },
+        path: "apps",
+        element: <Outlet />,
         children: [
           {
+            id: "chat",
             path: "chat",
-            async lazy() {
-              let { Chat } = await import("./pages/Apps/Chat");
-              return { Component: Chat };
-            },
+            lazy: () => import("./pages/Apps/Chat/Documentation"),
           },
         ],
       },
