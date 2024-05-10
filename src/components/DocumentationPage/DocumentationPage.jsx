@@ -3,6 +3,7 @@ import { Box, Grid, Page, PageContent, PageHeader, Paragraph } from "grommet";
 import { SectionCard } from "../Section";
 import Anchor from "../Anchor";
 import StickyBox from "../StickyBox";
+import NavSection from "../NavSection";
 
 export default function DocumentationPage({ children, className = "", demoHeight = "500px", description, title }) {
   return (
@@ -37,13 +38,15 @@ export default function DocumentationPage({ children, className = "", demoHeight
               <Paragraph>Coming soon</Paragraph>
             </Box>
           </Box>
-          <Box gridArea="sidebar" background="light-1">
+          <Box gridArea="sidebar">
             <StickyBox>
               <Box pad="medium" gap="small">
-                <Anchor href="#demo" label="Demo" />
-                <Anchor href="#props" label="Props" />
-                <Anchor href="#sections" label="Sections" />
-                <Anchor href="#components" label="Components" />
+                <NavSection title="Calendar">
+                  <Anchor href="#demo" label="Demo" />
+                  <Anchor href="#props" label="Props" />
+                  <Anchor href="#sections" label="Sections" />
+                  <Anchor href="#components" label="Components" />
+                </NavSection>
               </Box>
             </StickyBox>
           </Box>
