@@ -3,20 +3,16 @@ import { Box, Page, PageContent, PageHeader } from "grommet";
 
 import { SectionCard } from "../Section";
 
-export default function DocumentationPage({
-  children,
-  className = "",
-  demoHeight = { max: "500px" },
-  description,
-  title,
-}) {
+export default function DocumentationPage({ children, className = "", demoHeight = "500px", description, title }) {
   return (
     <Page className={`DocumentationPage ${className}`} kind="wide">
       <PageContent>
         <PageHeader title={title} subtitle={description} pad={{ top: "none" }} margin={{ bottom: "medium" }} />
 
         <Box height={demoHeight} pad={{ bottom: "xsmall" }}>
-          <SectionCard>{children}</SectionCard>
+          <SectionCard bodyPad="none" fill>
+            {children}
+          </SectionCard>
         </Box>
       </PageContent>
     </Page>

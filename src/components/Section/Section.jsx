@@ -37,10 +37,10 @@ SectionGrid.propTypes = {
   columns: PropTypes.number,
 };
 
-export function SectionCard({ children, level = 3, title, bodyPad = "medium" }) {
+export function SectionCard({ children, level = 3, title, bodyPad = "medium", ...rest }) {
   const { theme } = useContext(DemoContext);
   return (
-    <Card>
+    <Card className="SectionCard" {...rest}>
       {title && (
         <CardHeader pad="medium" background="light-1">
           <Heading level={level} margin="none" size="small">
