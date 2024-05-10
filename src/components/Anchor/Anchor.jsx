@@ -1,5 +1,5 @@
 import { useLocation, useNavigate, useResolvedPath } from "react-router-dom";
-import { Box, Anchor as GrommetAnchor, Text } from "grommet";
+import { Anchor as GrommetAnchor, Box, Text } from "grommet";
 
 export default function Anchor({ href, label, ...props }) {
   const navigate = useNavigate();
@@ -14,11 +14,9 @@ export default function Anchor({ href, label, ...props }) {
 
   if (pathname === location?.pathname) {
     return (
-      <Box>
-        <Text color="text-weak" weight="bold">
-          {label}
-        </Text>
-      </Box>
+      <Text color="active" weight="bold">
+        {label}
+      </Text>
     );
   }
 

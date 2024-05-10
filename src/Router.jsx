@@ -13,11 +13,27 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "general/:pageName?",
+        path: "components/:pageName?",
         async lazy() {
-          let { General } = await import("./pages/General/General");
-          return { Component: General };
+          let { Components } = await import("./pages/Components/Components");
+          return { Component: Components };
         },
+      },
+      {
+        path: "apps/:appName?",
+        async lazy() {
+          let { Apps } = await import("./pages/Apps/Apps");
+          return { Component: Apps };
+        },
+        children: [
+          {
+            path: "chat",
+            async lazy() {
+              let { Chat } = await import("./pages/Apps/Chat");
+              return { Component: Chat };
+            },
+          },
+        ],
       },
       {
         path: "*",

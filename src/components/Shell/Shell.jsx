@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { createContext, useState } from "react";
-import { Box, Grid, Grommet, Header, Image, Main, Nav, Select, Sidebar } from "grommet";
+import { Box, Grid, Grommet, Header, Image, Main, Nav, Select, Sidebar, Text } from "grommet";
 import * as themes from "../../themes";
 import Anchor from "../Anchor";
+import NavSection from "../NavSection";
 const themeNames = Object.keys(themes).toSorted();
 
 const DEFAULT_DEMO_THEME = "standard";
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <DemoContext.Provider value={{ theme: themes[activeTheme] }}>
-      <Grommet theme={themes.standard} full>
+      <Grommet theme={themes.branded} full>
         <Grid
           rows={["xsmall", "auto"]}
           columns={["small", "auto"]}
@@ -47,9 +48,14 @@ function App() {
               }
               href="/"
             />
-            <Nav pad="medium" gap="small" align="center">
-              <Anchor href="/general" label="General" />
-              <Anchor href="/apps" label="Apps" />
+            <Nav pad="medium" gap="small">
+              <NavSection title="Apps">
+                <Anchor href="/apps/chat" label="Chat" />
+              </NavSection>
+              <NavSection title="Components">
+                <Anchor href="/components/forms" label="Forms" />
+                <Anchor href="/components/typography" label="Typography" />
+              </NavSection>
             </Nav>
           </Sidebar>
           <Main gridArea="main">
