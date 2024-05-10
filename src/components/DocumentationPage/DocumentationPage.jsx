@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Box, Grid, Heading, Page, PageContent, PageHeader } from "grommet";
+import { Box, Grid, Heading, Page, PageContent, PageHeader, Paragraph } from "grommet";
 import { SectionCard } from "../Section";
 import Anchor from "../Anchor";
 import StickyBox from "../StickyBox";
@@ -26,12 +26,15 @@ export default function DocumentationPage({ children, className = "", demoHeight
             </Box>
             <Box id="props">
               <PageHeader title="Props" subtitle="Props that can be passed to the app" level={2} />
+              <Paragraph>Coming soon</Paragraph>
             </Box>
             <Box id="sections">
               <PageHeader title="Sections" subtitle="Sections of the app" level={2} />
+              <Paragraph>Coming soon</Paragraph>
             </Box>
             <Box id="components">
               <PageHeader title="Components" subtitle="Components the app is composed of" level={2} />
+              <Paragraph>Coming soon</Paragraph>
             </Box>
           </Box>
           <Box gridArea="sidebar" background="light-1">

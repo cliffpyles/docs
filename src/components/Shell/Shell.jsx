@@ -52,6 +52,7 @@ function App() {
               <Nav pad="medium" gap="small">
                 <NavSection title="Apps">
                   <Anchor href="/apps/chat" label="Chat" />
+                  <Anchor href="/apps/email" label="Email" />
                 </NavSection>
                 <NavSection title="Components">
                   <Anchor href="/components/forms" label="Forms" />

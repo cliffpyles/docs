@@ -28,6 +28,11 @@ const router = createBrowserRouter([
             path: "chat",
             lazy: () => import("./pages/Apps/Chat/Documentation"),
           },
+          {
+            id: "email",
+            path: "email",
+            lazy: () => import("./pages/Apps/Email/Documentation"),
+          },
         ],
       },
       {
