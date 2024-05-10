@@ -20,7 +20,7 @@ export default function DocumentationPage({ children, className = "", demoHeight
           ]}
         >
           <Box gridArea="main" gap="medium" pad="medium">
-            <Box id="demo" pad={{ bottom: "xsmall" }}>
+            <Box id="preview" pad={{ bottom: "xsmall" }}>
               <SectionCard bodyPad="none" height={demoHeight}>
                 {children}
               </SectionCard>
@@ -42,7 +42,7 @@ export default function DocumentationPage({ children, className = "", demoHeight
             <StickyBox>
               <Box pad="medium" gap="small">
                 <NavSection title="Calendar">
-                  <Anchor href="#demo" label="Demo" />
+                  <Anchor href="#preview" label="Preview" />
                   <Anchor href="#props" label="Props" />
                   <Anchor href="#sections" label="Sections" />
                   <Anchor href="#components" label="Components" />
