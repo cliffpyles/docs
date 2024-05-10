@@ -24,6 +24,11 @@ const router = createBrowserRouter([
         element: <Outlet />,
         children: [
           {
+            id: "calendar",
+            path: "calendar",
+            lazy: () => import("./pages/Apps/Calendar/Documentation"),
+          },
+          {
             id: "chat",
             path: "chat",
             lazy: () => import("./pages/Apps/Chat/Documentation"),
