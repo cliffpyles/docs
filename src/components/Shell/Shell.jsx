@@ -3,8 +3,9 @@ import { createContext, useState } from "react";
 import { Box, Grid, Grommet, Header, Image, Main, Nav, Select, Sidebar, Text } from "grommet";
 import * as themes from "../../themes";
 import Anchor from "../Anchor";
+import StickyBox from "../StickyBox";
 import NavSection from "../NavSection";
-const themeNames = Object.keys(themes).toSorted();
+// const themeNames = Object.keys(themes).toSorted();
 
 const DEFAULT_DEMO_THEME = "standard";
 
@@ -16,19 +17,18 @@ function App() {
   const [activeTheme, setActiveTheme] = useState(DEFAULT_DEMO_THEME);
 
   return (
-    <Grommet className="Shell" theme={themes.branded} full>
+    <Grommet className="Shell" theme={themes.branded} full="min">
       <DemoContext.Provider value={{ theme: themes[activeTheme] }}>
         <Grid
           rows={["xsmall", "auto"]}
           columns={["small", "auto"]}
           gap="small"
           areas={[
-            { name: "header", start: [1, 0], end: [1, 0] },
-            { name: "nav", start: [0, 0], end: [0, 1] },
-            { name: "main", start: [1, 1], end: [1, 1] },
+            ["nav", "main"],
+            ["nav", "main"],
           ]}
         >
-          <Header gridArea="header">
+          {/* <Header gridArea="header">
             <Box />
             <Box direction="row" justify="end" align="baseline" fill="horizontal" pad="small" gap="small">
               <Select
@@ -38,7 +38,7 @@ function App() {
                 onChange={({ option }) => setActiveTheme(option)}
               />
             </Box>
-          </Header>
+          </Header> */}
           <Sidebar gridArea="nav">
             <Anchor
               label={
@@ -48,17 +48,19 @@ function App() {
               }
               href="/"
             />
-            <Nav pad="medium" gap="small">
-              <NavSection title="Apps">
-                <Anchor href="/apps/chat" label="Chat" />
-              </NavSection>
-              <NavSection title="Components">
-                <Anchor href="/components/forms" label="Forms" />
-                <Anchor href="/components/typography" label="Typography" />
-              </NavSection>
-            </Nav>
+            <StickyBox>
+              <Nav pad="medium" gap="small">
+                <NavSection title="Apps">
+                  <Anchor href="/apps/chat" label="Chat" />
+                </NavSection>
+                <NavSection title="Components">
+                  <Anchor href="/components/forms" label="Forms" />
+                  <Anchor href="/components/typography" label="Typography" />
+                </NavSection>
+              </Nav>
+            </StickyBox>
           </Sidebar>
-          <Main gridArea="main">
+          <Main gridArea="main" style={{ overflow: "visible" }}>
             <Outlet />
           </Main>
         </Grid>

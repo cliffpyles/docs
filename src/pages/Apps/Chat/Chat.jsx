@@ -133,7 +133,6 @@ export function Chat({
         ["ChatSidebar", "ChatMain", "ChatMain", "ChatMain"],
         ["ChatCompose", "ChatMessage", "ChatMessage", "ChatMessage"],
       ]}
-      fill
     >
       <Box className="ChatContactSearch" gridArea="ChatContactSearch" pad="small" border="right">
         <TextInput
