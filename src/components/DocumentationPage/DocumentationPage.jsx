@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Box, Grid, Heading, Page, PageContent, PageHeader, Paragraph } from "grommet";
+import { Box, Grid, Page, PageContent, PageHeader, Paragraph } from "grommet";
 import { SectionCard } from "../Section";
 import Anchor from "../Anchor";
 import StickyBox from "../StickyBox";

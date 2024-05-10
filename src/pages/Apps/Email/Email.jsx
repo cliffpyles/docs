@@ -1,21 +1,8 @@
 import moment from "moment";
-import {
-  Avatar,
-  Box,
-  Button,
-  DropButton,
-  Grid,
-  Grommet,
-  Heading,
-  InfiniteScroll,
-  Markdown,
-  Text,
-  TextInput,
-} from "grommet";
+import { Avatar, Box, Button, DropButton, Grid, Heading, InfiniteScroll, Markdown, Text, TextInput } from "grommet";
 import { Flag, Folder, Next, Previous, StatusGoodSmall, Tag, Trash } from "grommet-icons";
 
 import useEmail from "./useEmail";
-import theme from "./theme";
 
 function EmailTag({ color, label, ...props }) {
   return (

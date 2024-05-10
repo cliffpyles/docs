@@ -2,7 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Grommet,
   Grid,
   Heading,
   InfiniteScroll,
