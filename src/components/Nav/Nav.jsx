@@ -45,15 +45,14 @@ export default function Nav(props) {
     <GrommetNav gap="small" align="start" {...props}>
       <NavSection title="Overview"></NavSection>
       <NavSection title="Getting Started"></NavSection>
-
-      <NavSection title="Examples">
-        <Anchor href="/apps/calendar" label="Calendar" />
-        <Anchor href="/apps/chat" label="Chat" />
-        <Anchor href="/apps/contacts" label="Contacts" />
-        <Anchor href="/apps/dashboard" label="Dashboard" />
-        <Anchor href="/apps/email" label="Email" />
-      </NavSection>
       <NavSection title="Guides"></NavSection>
+      <NavSection title="Examples">
+        <Anchor href="/examples/calendar" label="Calendar" />
+        <Anchor href="/examples/chat" label="Chat" />
+        <Anchor href="/examples/contacts" label="Contacts" />
+        <Anchor href="/examples/dashboard" label="Dashboard" />
+        <Anchor href="/examples/email" label="Email" />
+      </NavSection>
       <NavSection title="Tooling"></NavSection>
       <NavSection title="References"></NavSection>
     </GrommetNav>

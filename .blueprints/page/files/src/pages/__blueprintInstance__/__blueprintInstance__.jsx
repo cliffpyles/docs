@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
-import { Box } from "grommet";
+import { Page, PageContent, PageHeader } from "grommet";
 
-export default function {{blueprintInstance}}({ children }) {
-    return <Box>{children}</Box>
-}
-
-{{blueprintInstance}}.propTypes = {
-    children: PropTypes.node.isRequired
+export default function {{blueprintInstance}}(props) {
+  return (
+    <Page kind="full" {...props}>
+      <PageContent>
+        <PageHeader title="{{blueprintInstance}}" description="{{description}}" pad={{ vertical: "medium" }} />
+      </PageContent>
+    </Page>
+  );
 }

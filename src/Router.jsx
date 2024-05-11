@@ -20,35 +20,49 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: "apps",
+        path: "examples",
         element: <Outlet />,
         children: [
           {
             id: "calendar",
             path: "calendar",
-            lazy: () => import("./pages/Apps/Calendar/Documentation"),
+            lazy: () => import("./pages/Examples/Calendar/Documentation"),
           },
           {
             id: "chat",
             path: "chat",
-            lazy: () => import("./pages/Apps/Chat/Documentation"),
+            lazy: () => import("./pages/Examples/Chat/Documentation"),
           },
           {
             id: "contacts",
             path: "contacts",
-            lazy: () => import("./pages/Apps/Contacts/Documentation"),
+            lazy: () => import("./pages/Examples/Contacts/Documentation"),
           },
           {
             id: "dashboard",
             path: "dashboard",
-            lazy: () => import("./pages/Apps/Dashboard/Documentation"),
+            lazy: () => import("./pages/Examples/Dashboard/Documentation"),
           },
           {
             id: "email",
             path: "email",
-            lazy: () => import("./pages/Apps/Email/Documentation"),
+            lazy: () => import("./pages/Examples/Email/Documentation"),
           },
         ],
+      },
+      {
+        path: "guides/:pageName?",
+        async lazy() {
+          const { Guides } = await import("./pages/Guides/Guides");
+          return { Component: Guides };
+        },
+      },
+      {
+        path: "posts/:pageName?",
+        async lazy() {
+          const { Posts, loadPosts } = await import("./pages/Posts/Posts");
+          return { Component: Posts, loader: loadPosts };
+        },
       },
       {
         path: "*",
