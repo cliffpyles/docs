@@ -54,7 +54,6 @@ export default function Nav(props) {
         <Anchor href="/apps/email" label="Email" />
       </NavSection>
       <NavSection title="Guides"></NavSection>
-      <NavSection title="Deep Dives"></NavSection>
       <NavSection title="Tooling"></NavSection>
       <NavSection title="References"></NavSection>
     </GrommetNav>
