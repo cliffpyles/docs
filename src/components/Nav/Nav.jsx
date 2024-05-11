@@ -1,10 +1,23 @@
 import PropTypes from "prop-types";
-import { Anchor, Box, Button, Collapsible, Nav as GrommetNav, Text } from "grommet";
-import { useState } from "react";
+import { Anchor, Box, Button, Collapsible, Nav as GrommetNav, ResponsiveContext, Text } from "grommet";
+import { useContext, useState } from "react";
 import { CaretDownFill as CaretDownFillIcon, CaretRightFill as CaretRightFillIcon } from "grommet-icons";
 
 function NavSection({ children, open, title, ...props }) {
   const [isOpen, setIsOpen] = useState(open);
+  const size = useContext(ResponsiveContext);
+  const isSmall = size === "small";
+  const smallLayoutProps = {
+    gap: "medium",
+    align: "start",
+    margin: { vertical: "medium", left: "xlarge" },
+  };
+  const largeLayoutProps = {
+    gap: "medium",
+    align: "start",
+    margin: { vertical: "small", left: "large" },
+  };
+  const layoutProps = isSmall ? smallLayoutProps : largeLayoutProps;
   return (
     <Box gap="small" margin={{ vertical: "small" }} align="start" {...props}>
       <Button
@@ -15,9 +28,7 @@ function NavSection({ children, open, title, ...props }) {
         plain
       />
       <Collapsible open={isOpen}>
-        <Box gap="medium" margin={{ vertical: "medium", left: "xlarge" }} align="start">
-          {children}
-        </Box>
+        <Box {...layoutProps}>{children}</Box>
       </Collapsible>
     </Box>
   );

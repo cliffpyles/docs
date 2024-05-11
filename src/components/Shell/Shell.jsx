@@ -41,14 +41,17 @@ const largeLayoutProps = {
   columns: ["1/4", "auto", "1/4"],
   gap: "small",
   areas: [
-    ["header", "header", "header"],
-    ["nav", "main", "main"],
+    ["sidebar", "header", "header"],
+    ["sidebar", "main", "main"],
   ],
 };
 
 function Sidebar() {
   return (
-    <GrommetSidebar gridArea="nav">
+    <GrommetSidebar gridArea="sidebar">
+      <Box pad={{ horizontal: "medium" }} margin={{ bottom: "medium" }}>
+        <Anchor href="/" icon={<StackedLogo />} color="text" />
+      </Box>
       <StickyBox>
         <Nav />
       </StickyBox>
@@ -66,9 +69,7 @@ function Drawer({ open, onClose }) {
             <Button icon={<CloseIcon />} onClick={onClose} plain />
           </CardHeader>
           <CardBody>
-            <Sidebar gridArea="nav">
-              <Nav />
-            </Sidebar>
+            <Nav />
           </CardBody>
         </Card>
       </Layer>
@@ -87,14 +88,19 @@ function App() {
   return (
     <DemoContext.Provider value={{ theme: themes[activeTheme] }}>
       <Grid {...layoutProps}>
-        <Header gridArea="header" pad="medium">
-          <Box direction="row" align="center" justify="between" fill>
-            {isSmall && (
+        {isSmall ? (
+          <Header gridArea="header" pad="medium">
+            <Box direction="row" align="center" justify="between" fill>
               <Button icon={<MenuIcon size="large" />} onClick={() => setIsMenuActive(!isMenuActive)} plain />
-            )}
-            <Anchor href="/" icon={<StackedLogo />} color="text" />
-          </Box>
-        </Header>
+
+              <Anchor href="/" icon={<StackedLogo />} color="text" />
+            </Box>
+          </Header>
+        ) : (
+          <Header gridArea="header" pad="medium">
+            <Box direction="row" align="center" justify="between" fill></Box>
+          </Header>
+        )}
         {isSmall ? <Drawer open={isMenuActive} onClose={() => setIsMenuActive(false)} /> : <Sidebar />}
         <Main gridArea="main" style={{ overflow: "visible" }}>
           <Outlet />

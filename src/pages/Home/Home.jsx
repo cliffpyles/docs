@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <Page kind="wide">
       <PageContent>
-        <PageHeader title="Home" pad={{ vertical: "none" }} />
+        <PageHeader pad={{ vertical: "none" }} />
       </PageContent>
     </Page>
   );
