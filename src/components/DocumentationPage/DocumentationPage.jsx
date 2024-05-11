@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Box, Grid, Page, PageContent, PageHeader, Paragraph } from "grommet";
-import Section, { SectionCard } from "../Section";
+import { SectionCard } from "../Section";
 import Anchor from "../Anchor";
 import StickyBox from "../StickyBox";
 import NavSection from "../NavSection";
@@ -58,7 +58,7 @@ export default function DocumentationPage({ children, className = "", demoHeight
                   <Anchor href="#props" label="Props" />
                   <Anchor href="#accessibility" label="Accessibility" />
                   <Anchor href="#compatibility" label="Compatibility" />
-                  <Anchor href="#performance" label="Compatibility" />
+                  <Anchor href="#performance" label="Performance" />
                   <Anchor href="#security" label="Security" />
                   <Anchor href="#usage" label="Usage" />
                 </NavSection>

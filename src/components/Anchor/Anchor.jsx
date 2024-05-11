@@ -1,11 +1,12 @@
 import { useLocation, useNavigate, useResolvedPath } from "react-router-dom";
-import { Anchor as GrommetAnchor, Text } from "grommet";
+import { Anchor as GrommetAnchor } from "grommet";
 
 export default function Anchor({ href, label, ...props }) {
   const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = useResolvedPath(href);
-
+  const activeProps =
+    pathname === location?.pathname ? { color: "active", weight: "bold", disabled: true, style: { opacity: 1 } } : {};
   const handleClick = (event) => {
     event.preventDefault();
 
@@ -17,16 +18,8 @@ export default function Anchor({ href, label, ...props }) {
   };
 
   if (href?.startsWith("#")) {
-    return <GrommetAnchor {...props} href={href} label={label} onClick={handleScroll} />;
+    return <GrommetAnchor href={href} label={label} onClick={handleScroll} {...activeProps} {...props} />;
   }
 
-  if (pathname === location?.pathname) {
-    return (
-      <Text color="active" weight="bold">
-        {label}
-      </Text>
-    );
-  }
-
-  return <GrommetAnchor {...props} href={pathname} label={label} onClick={handleClick} />;
+  return <GrommetAnchor href={pathname} label={label} onClick={handleClick} {...activeProps} {...props} />;
 }

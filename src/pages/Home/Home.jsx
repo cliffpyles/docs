@@ -1,9 +1,11 @@
-import { Box } from "grommet";
+import { Page, PageContent, PageHeader } from "grommet";
 
 export default function Home() {
   return (
-    <Box>
-      <h2>Home</h2>
-    </Box>
+    <Page kind="wide">
+      <PageContent>
+        <PageHeader title="Home" pad={{ vertical: "none" }} />
+      </PageContent>
+    </Page>
   );
 }

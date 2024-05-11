@@ -34,4 +34,14 @@ export const branded = deepMerge(grommet, {
       extend: () => `color: ${LINK_HOVER_COLOR};`,
     },
   },
+  icon: {
+    size: {
+      small: "12px", // defaults to 12px
+      medium: "24px", // defaults to 24px
+      large: "36px", // defaults to 48px
+      xlarge: "48px", // defaults to 96px
+      xxlarge: "96px", // doesn't exist by default
+    },
+    extend: undefined,
+  },
 });
