@@ -13,7 +13,7 @@ export function NavSection({ children, open, title, ...props }) {
     margin: { vertical: "medium", left: "xlarge" },
   };
   const largeLayoutProps = {
-    gap: "medium",
+    gap: "small",
     align: "start",
     margin: { vertical: "small", left: "large" },
   };

@@ -13,7 +13,7 @@ export default function DocumentationPage({ children, className = "", demoHeight
         <Grid
           columns={["auto", "1/4"]}
           rows={["auto", "auto"]}
-          gap="medium"
+          gap="small"
           areas={[
             ["main", "sidebar"],
             ["main", "sidebar"],
@@ -53,15 +53,13 @@ export default function DocumentationPage({ children, className = "", demoHeight
           <Box gridArea="sidebar">
             <StickyBox>
               <Box pad="medium" gap="small">
-                <NavSection title="Calendar">
-                  <Anchor href="#preview" label="Preview" />
-                  <Anchor href="#props" label="Props" />
-                  <Anchor href="#accessibility" label="Accessibility" />
-                  <Anchor href="#compatibility" label="Compatibility" />
-                  <Anchor href="#performance" label="Performance" />
-                  <Anchor href="#security" label="Security" />
-                  <Anchor href="#usage" label="Usage" />
-                </NavSection>
+                <Anchor href="#preview" label="Preview" />
+                <Anchor href="#props" label="Props" />
+                <Anchor href="#accessibility" label="Accessibility" />
+                <Anchor href="#compatibility" label="Compatibility" />
+                <Anchor href="#performance" label="Performance" />
+                <Anchor href="#security" label="Security" />
+                <Anchor href="#usage" label="Usage" />
               </Box>
             </StickyBox>
           </Box>

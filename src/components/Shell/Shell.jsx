@@ -38,10 +38,10 @@ const smallLayoutProps = {
 
 const largeLayoutProps = {
   rows: ["xsmall", "auto"],
-  columns: ["1/4", "auto", "1/4"],
+  columns: ["small", "auto", "1/4"],
   gap: "small",
   areas: [
-    ["sidebar", "header", "header"],
+    ["sidebar", "main", "main"],
     ["sidebar", "main", "main"],
   ],
 };
