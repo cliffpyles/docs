@@ -1,10 +1,13 @@
+import { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { Anchor, Box, Button, Collapsible, Nav as GrommetNav, ResponsiveContext, Text } from "grommet";
-import { useContext, useState } from "react";
 import { CaretDownFill as CaretDownFillIcon, CaretRightFill as CaretRightFillIcon } from "grommet-icons";
+import { useLocation } from "react-router-dom";
 
-export function NavSection({ children, open, title, ...props }) {
-  const [isOpen, setIsOpen] = useState(open);
+function NavSection({ children, open, title, ...props }) {
+  const childPaths = children?.map((child) => child?.props?.href);
+  const location = useLocation();
+  const [isOpen, setIsOpen] = useState(childPaths?.includes?.(location?.pathname));
   const size = useContext(ResponsiveContext);
   const isSmall = size === "small";
   const smallLayoutProps = {
@@ -18,6 +21,7 @@ export function NavSection({ children, open, title, ...props }) {
     margin: { vertical: "small", left: "large" },
   };
   const layoutProps = isSmall ? smallLayoutProps : largeLayoutProps;
+
   return (
     <Box gap="small" margin={{ vertical: "small" }} align="start" {...props}>
       <Button
