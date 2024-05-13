@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 export function Posts(props) {
   const data = useLoaderData();
 
-  console.log(data);
   return (
     <Page kind="full" {...props}>
       <PageContent>
@@ -15,5 +14,5 @@ export function Posts(props) {
 }
 
 export function loadPosts() {
-  return { cliff: "working" };
+  return { posts: [] };
 }
