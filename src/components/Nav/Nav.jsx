@@ -3,7 +3,7 @@ import { Anchor, Box, Button, Collapsible, Nav as GrommetNav, ResponsiveContext,
 import { useContext, useState } from "react";
 import { CaretDownFill as CaretDownFillIcon, CaretRightFill as CaretRightFillIcon } from "grommet-icons";
 
-function NavSection({ children, open, title, ...props }) {
+export function NavSection({ children, open, title, ...props }) {
   const [isOpen, setIsOpen] = useState(open);
   const size = useContext(ResponsiveContext);
   const isSmall = size === "small";

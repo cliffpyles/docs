@@ -3,7 +3,7 @@ import { Box, Grid, Page, PageContent, PageHeader, Paragraph } from "grommet";
 import { SectionCard } from "../Section";
 import Anchor from "../Anchor";
 import StickyBox from "../StickyBox";
-import NavSection from "../NavSection";
+import { NavSection } from "../Nav";
 
 export default function DocumentationPage({ children, className = "", demoHeight = "500px", description, title }) {
   return (
