@@ -18,7 +18,7 @@ export default function Anchor({ href, label, ...props }) {
   };
 
   if (href?.startsWith("#")) {
-    return <GrommetAnchor href={href} label={label} onClick={handleScroll} {...activeProps} {...props} />;
+    return <GrommetAnchor href={href} label={label} onClick={handleScroll} {...props} />;
   }
 
   return <GrommetAnchor href={pathname} label={label} onClick={handleClick} {...activeProps} {...props} />;

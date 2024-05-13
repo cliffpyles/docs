@@ -52,9 +52,8 @@ function Sidebar() {
       <Box pad={{ horizontal: "medium" }} margin={{ bottom: "medium" }}>
         <Anchor href="/" icon={<StackedLogo />} color="text" />
       </Box>
-      <StickyBox>
-        <Nav />
-      </StickyBox>
+
+      <Nav />
     </GrommetSidebar>
   );
 }
@@ -96,11 +95,7 @@ function App() {
               <Anchor href="/" icon={<StackedLogo />} color="text" />
             </Box>
           </Header>
-        ) : (
-          <Header gridArea="header" pad="medium">
-            <Box direction="row" align="center" justify="between" fill></Box>
-          </Header>
-        )}
+        ) : null}
         {isSmall ? <Drawer open={isMenuActive} onClose={() => setIsMenuActive(false)} /> : <Sidebar />}
         <Main gridArea="main" style={{ overflow: "visible" }}>
           <Outlet />

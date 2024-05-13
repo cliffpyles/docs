@@ -7,7 +7,7 @@ import StickyBox from "../StickyBox";
 export default function DocumentationPage({ children, className = "", demoHeight = "500px", description, title }) {
   return (
     <Page className={`DocumentationPage ${className}`} kind="full">
-      <PageContent>
+      <PageContent pad={{ horizontal: "none" }}>
         <PageHeader gridArea="header" title={title} subtitle={description} background="light-1" pad="medium" />
         <Grid
           columns={["auto", "1/4"]}
