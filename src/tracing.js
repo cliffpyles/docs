@@ -1,7 +1,7 @@
 import { HoneycombWebSDK } from "@honeycombio/opentelemetry-web";
 import { getWebAutoInstrumentations } from "@opentelemetry/auto-instrumentations-web";
 
-if (import.meta.env.VITE_HONEYCOMB_AUTO_INSTRUMENT_ENABLED === "true") {
+if (import.meta.env.VITE_TRACING_ENABLED === "true") {
   console.log("tracing enabled...");
   const config = {
     apiKey: import.meta.env.VITE_HONEYCOMB_API_KEY,
