@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import PropTypes from "prop-types";
-import { Anchor, Box, Button, Collapsible, Nav as GrommetNav, ResponsiveContext, Text } from "grommet";
+import { Box, Button, Collapsible, Nav as GrommetNav, ResponsiveContext, Text } from "grommet";
 import { CaretDownFill as CaretDownFillIcon, CaretRightFill as CaretRightFillIcon } from "grommet-icons";
 import { useLocation } from "react-router-dom";
+import Anchor from "../Anchor";
 
 function NavSection({ children, open, title, ...props }) {
   const childPaths = children?.map((child) => child?.props?.href);
