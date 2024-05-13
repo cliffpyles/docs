@@ -65,6 +65,13 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "sandbox",
+        async lazy() {
+          const { Sandbox, loadData } = await import("./pages/Sandbox/Sandbox");
+          return { Component: Sandbox, loader: loadData };
+        },
+      },
+      {
         path: "*",
         element: <NotFound />,
       },

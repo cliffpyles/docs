@@ -5,10 +5,10 @@ import { CaretDownFill as CaretDownFillIcon, CaretRightFill as CaretRightFillIco
 import { useLocation } from "react-router-dom";
 import Anchor from "../Anchor";
 
-function NavSection({ children, open, title, ...props }) {
+function NavSection({ children, title, ...props }) {
   const childPaths = children?.map((child) => child?.props?.href);
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(childPaths?.includes?.(location?.pathname));
+  const [isOpen, setIsOpen] = useState(childPaths?.includes?.(location?.pathname) || false);
   const size = useContext(ResponsiveContext);
   const isSmall = size === "small";
   const smallLayoutProps = {
@@ -40,7 +40,7 @@ function NavSection({ children, open, title, ...props }) {
 }
 
 NavSection.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   open: PropTypes.boolean,
   title: PropTypes.string,
 };
